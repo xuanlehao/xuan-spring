@@ -14,6 +14,5 @@ gradle/
 .recommenders/
 .metadata/
 build/
-
 *.iml
 */*.iml
