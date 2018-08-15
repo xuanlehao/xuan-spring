@@ -21,7 +21,6 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
 
     }
 
-    @Override
     public Object getBean(String beanID) {
         BeanDefinition bd = getBeanDefinition(beanID);
         if (bd == null ) {
@@ -48,23 +47,20 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
             throw new BeanCreationException("create bean for "+ beanClassName +" failed",e);
         }
     }
-    @Override
+
     public BeanDefinition getBeanDefinition(String beanID) {
         return beanDefinitionMap.get(beanID);
     }
 
-    @Override
     public void registerBeanDefinition(String beanID, BeanDefinition bd) {
         this.beanDefinitionMap.put(beanID,bd);
     }
 
-    @Override
     public void setBeanClassLoader(ClassLoader beanClassLoader) {
         this.beanClassLoader = beanClassLoader;
     }
 
-    @Override
-    public ClassLoader getBeanClassLoader() {
+    public ClassLoader                 getBeanClassLoader() {
         return (this.beanClassLoader != null ? this.beanClassLoader : ClassUtils.getDefaultClassLoader());
     }
 
