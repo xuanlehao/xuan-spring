@@ -28,6 +28,6 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanFactory{
 
     @Override
     public Object getSingleton(String beanName) {
-        return null;
+        return singleMap.get(beanName);
     }
 }
